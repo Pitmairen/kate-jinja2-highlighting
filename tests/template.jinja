@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Hallo!{% endblock %}
+
+{% block content %}
+
+    %:for i in range(100):
+        %:if i == 12:
+            {{ i }}
+        %:else:
+            {{ i }}
+        %:end
+    %:end
+
+{% endblock %}
+## kate: syntax Jinja2

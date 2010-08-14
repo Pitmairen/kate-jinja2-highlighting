@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+
+body{
+	color: #404040;
+}
+{% if True %}
+	.test{
+		color: {{ test }};
+	}
+{% endif %}
+
+</style>
+
+<script>
+	{% if True %}
+		$(document).ready(function(){
+			$("#test").text({{ text }});
+		});
+	{% endif %}
+
+</script>
+
+</head>
+
+<body>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
+## kate: syntax Jinja2/HTML

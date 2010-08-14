@@ -1,0 +1,14 @@
+
+body{
+	color: #404040;
+}
+
+{% if True %}
+	.test{
+		color: {{ test }};
+	}
+{% endif %}
+
+#test{ color: {{ test }} }
+
+## kate: syntax Jinja2/CSS
