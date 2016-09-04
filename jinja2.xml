@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
 
-<language name="Jinja2" version="1.0" kateversion="2.4" section="Markup" extensions="*.jinja;*.jinja2;" author="Per Myren (progrper@gmail.com)" license="LGPL" priority="5">
+<language name="Jinja2" version="1.0" kateversion="2.4" section="Markup" extensions="*.jinja;*.jinja2;*.j2" author="Per Myren (progrper@gmail.com)" license="LGPL" priority="5">
 
 <highlighting>
 
