@@ -61,7 +61,8 @@ if __name__ == '__main__':
     sources = [
         ('javascript-jinja2.xml', 'javascript.xml', 'Jinja2/JavaScript', add_jinja_syntax),
         ('css-jinja2.xml', 'css.xml', 'Jinja2/CSS', add_jinja_syntax),
-        ('html-jinja2.xml', 'html.xml', 'Jinja2/HTML', add_jinja_syntax_html)
+        ('html-jinja2.xml', 'html.xml', 'Jinja2/HTML', add_jinja_syntax_html),
+        ('yaml-jinja2.xml', 'yaml.xml', 'Jinja2/YAML', add_jinja_syntax)
     ]
 
     for dest_file, source_file, syntax_name, converter in sources:

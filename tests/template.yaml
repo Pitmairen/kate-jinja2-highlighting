@@ -1,0 +1,7 @@
+ Fuu:
+   - a
+   - b
+   - c
+   {% for i in ['f', 'e', 'd', 'g']|sorted %}
+   - {{ i }}
+   {% endfor %}
