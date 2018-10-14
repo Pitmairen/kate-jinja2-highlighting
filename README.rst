@@ -8,7 +8,7 @@ Copy the *.xml files into the following folder:
 
   ~/.local/share/org.kde.syntax-highlighting/syntax/
 
-Make sure to restart kate after you copy the files. You can test if the syntax files are picked up by opening some of the files in the "tests" folder.
+Make sure to restart Kate after you copy the files. You can test if the syntax files are picked up by opening some of the files in the "tests" folder.
 
 If the syntax is not picked up, you can try to copy the files into one of the following folders:
 
@@ -17,6 +17,11 @@ If the syntax is not picked up, you can try to copy the files into one of the fo
   ~/.local/share/katepart5/syntax
   ~/.kde/share/apps/katepart/syntax
 
+On macOS:
+
+::
+
+  ~/Library/Application\ Support/katepart5/syntax/
 
 yaml + Jinja2
 -------------
