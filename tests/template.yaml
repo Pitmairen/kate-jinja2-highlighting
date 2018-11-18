@@ -5,3 +5,13 @@
    {% for i in ['f', 'e', 'd', 'g']|sorted %}
    - {{ i }}
    {% endfor %}
+
+
+- name: test
+  become: yes
+  tasks:
+    - name: Test
+      copy:
+          src: "{{ test | join('we') }}/test"
+          
+          

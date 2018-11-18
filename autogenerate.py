@@ -56,7 +56,7 @@ if __name__ == '__main__':
     try:
         source_dir = sys.argv[1]
     except IndexError:
-        source_dir = '/usr/share/apps/katepart/syntax/'
+        source_dir = '/usr/share/org.kde.syntax-highlighting/syntax/'
 
     sources = [
         ('javascript-jinja2.xml', 'javascript.xml', 'Jinja2/JavaScript', add_jinja_syntax),
