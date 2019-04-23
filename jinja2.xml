@@ -43,6 +43,11 @@
     <item>autoescape</item>
 </list>
 
+<list name="blockdividers">
+    <item>else</item>
+    <item>elif</item>
+</list>
+
 <list name="endblocktags">
     <item>end</item> <!-- jinja-simplesyntax extension -->
     <item>endfor</item>
@@ -83,6 +88,7 @@
 <context name="Block" attribute="Normal Text" lineEndContext="#stay">
     <Detect2Chars attribute="Block delimiter" context="#pop#pop" char="%" char1="}" />
     <keyword context="#stay" attribute="Keyword" String="keywords" />
+    <keyword context="#stay" attribute="Keyword" String="blockdividers" endRegion="jinjablock" beginRegion="jinjablock" />
     <keyword context="#stay" attribute="Keyword" String="blocktags" beginRegion="jinjablock" />
     <keyword context="#stay" attribute="Keyword" String="endblocktags" endRegion="jinjablock" />
     <IncludeRules context="##Python" />
@@ -90,6 +96,7 @@
 
 <context name="LineStatement" attribute="Normal Text" lineEndContext="#pop#pop">
     <keyword context="#stay" attribute="Keyword" String="keywords" />
+    <keyword context="#stay" attribute="Keyword" String="blockdividers" endRegion="jinjablock" beginRegion="jinjablock" />
     <keyword context="#stay" attribute="Keyword" String="blocktags" beginRegion="jinjablock" />
     <keyword context="#stay" attribute="Keyword" String="endblocktags" endRegion="jinjablock" />
     <IncludeRules context="##Python" />

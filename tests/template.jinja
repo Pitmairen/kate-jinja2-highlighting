@@ -4,9 +4,33 @@
 
 {% block content %}
 
+    {% for i in range(100) %}
+        {% if i == 12 %}
+            {{ i }}
+        {% elif i == 4 %}
+            {{ i + 1 }}
+        {% else %}
+            {{ i }}
+        {% endif %}
+    {% endfor %}
+
+
     %:for i in range(100):
         %:if i == 12:
             {{ i }}
+        %:elif i == 4:
+            {{ i + 1 }}
+        %:else:
+            {{ i }}
+        %:endif
+    %:endfor
+
+
+    %:for i in range(100):
+        %:if i == 12:
+            {{ i }}
+        %:elif i == 4:
+            {{ i + 1 }}
         %:else:
             {{ i }}
         %:end
