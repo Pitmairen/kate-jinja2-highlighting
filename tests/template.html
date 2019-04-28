@@ -26,7 +26,26 @@ body{
 
 <body>
 
-{% block content %}{% endblock %}
+{% block content %}
+
+
+    {% if True %}
+        A
+    {% elif False %}
+        B
+    {% elif False %}
+        {% if False %}
+            C
+        {% else %}
+            D
+        {% endif %}
+        E
+    {% else %}
+        F
+    {% endif %}
+
+
+{% endblock %}
 
 </body>
 </html>
