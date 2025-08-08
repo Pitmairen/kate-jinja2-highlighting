@@ -5,7 +5,8 @@ import os.path
 
 name_re = re.compile(r'<language name=".*?"')
 find_jinja_re = re.compile(r'</contexts>')
-context_re = re.compile(r'(<context .*?>)')
+context_re = re.compile(r'(<context .*?[^/]>)')
+closed_context_re = re.compile(r'(<context .*?)/>')
 find_jinja = '''\
 <context name="FindJinja">
     <Detect2Chars context="##Jinja2" char="{" char1="{" lookAhead="true" />
@@ -25,6 +26,7 @@ def add_jinja_syntax(filename, syntax_name):
             os.path.basename(filename), syntax_name), content)
 
     content = context_re.sub(r'\1\n<IncludeRules context="FindJinja" />', content)
+    content = closed_context_re.sub(r'\1>\n<IncludeRules context="FindJinja" /></context>', content)
 
     content = find_jinja_re.sub(find_jinja + '\n</contexts>', content)
 
@@ -62,7 +64,8 @@ if __name__ == '__main__':
         ('javascript-jinja2.xml', 'javascript.xml', 'Jinja2/JavaScript', add_jinja_syntax),
         ('css-jinja2.xml', 'css.xml', 'Jinja2/CSS', add_jinja_syntax),
         ('html-jinja2.xml', 'html.xml', 'Jinja2/HTML', add_jinja_syntax_html),
-        ('yaml-jinja2.xml', 'yaml.xml', 'Jinja2/YAML', add_jinja_syntax)
+        ('yaml-jinja2.xml', 'yaml.xml', 'Jinja2/YAML', add_jinja_syntax),
+        ('javascript-react-jinja2.xml', 'javascript-react.xml', 'Jinja2/JavaScript React (JSX)', add_jinja_syntax),
     ]
 
     for dest_file, source_file, syntax_name, converter in sources:
